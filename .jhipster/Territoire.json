@@ -1,0 +1,33 @@
+{
+  "name": "Territoire",
+  "fields": [
+    {
+      "fieldName": "idTerritoire",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dscTerritoire",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "organisme",
+      "otherEntityRelationshipName": "territoire",
+      "relationshipName": "organisme"
+    }
+  ],
+  "changelogDate": "20200703013004",
+  "entityTableName": "territoire",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

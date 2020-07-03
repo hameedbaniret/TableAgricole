@@ -1,0 +1,25 @@
+{
+  "tableAgricoleApp": {
+    "aliment": {
+      "home": {
+        "title": "Aliments",
+        "createLabel": "Create a new Aliment",
+        "createOrEditLabel": "Create or edit a Aliment",
+        "notFound": "No Aliments found"
+      },
+      "created": "A new Aliment is created with identifier {{ param }}",
+      "updated": "A Aliment is updated with identifier {{ param }}",
+      "deleted": "A Aliment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Aliment {{ id }}?"
+      },
+      "detail": {
+        "title": "Aliment"
+      },
+      "idAliment": "Id Aliment",
+      "dscAliment": "Dsc Aliment",
+      "besoin": "Besoin",
+      "typeAliment": "Type Aliment"
+    }
+  }
+}

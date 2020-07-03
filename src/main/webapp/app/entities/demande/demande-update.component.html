@@ -1,0 +1,293 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-demande-heading" jhiTranslate="tableAgricoleApp.demande.home.createOrEditLabel">Create or edit a Demande</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.idDemande" for="field_idDemande">Id Demande</label>
+                    <input type="number" class="form-control" name="idDemande" id="field_idDemande"
+                           formControlName="idDemande"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.frequence" for="field_frequence">Frequence</label>
+                    <select class="form-control" name="frequence" formControlName="frequence" id="field_frequence">
+                        <option value="QUOTIDIEN">{{ 'tableAgricoleApp.Frequence.QUOTIDIEN' | translate }}</option>
+                        <option value="NFOISSEMAINE">{{ 'tableAgricoleApp.Frequence.NFOISSEMAINE' | translate }}</option>
+                        <option value="HEBDO">{{ 'tableAgricoleApp.Frequence.HEBDO' | translate }}</option>
+                        <option value="BIMENSUEL">{{ 'tableAgricoleApp.Frequence.BIMENSUEL' | translate }}</option>
+                        <option value="MENSUEL">{{ 'tableAgricoleApp.Frequence.MENSUEL' | translate }}</option>
+                        <option value="AUTRE">{{ 'tableAgricoleApp.Frequence.AUTRE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepDepannageUrgence" for="field_flagTypeDepDepannageUrgence">Flag Type Dep Depannage Urgence</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepDepannageUrgence" id="field_flagTypeDepDepannageUrgence"
+                           formControlName="flagTypeDepDepannageUrgence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepDepannageRegulier" for="field_flagTypeDepDepannageRegulier">Flag Type Dep Depannage Regulier</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepDepannageRegulier" id="field_flagTypeDepDepannageRegulier"
+                           formControlName="flagTypeDepDepannageRegulier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepPopoteRoulante" for="field_flagTypeDepPopoteRoulante">Flag Type Dep Popote Roulante</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepPopoteRoulante" id="field_flagTypeDepPopoteRoulante"
+                           formControlName="flagTypeDepPopoteRoulante"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepMarcheAbordable" for="field_flagTypeDepMarcheAbordable">Flag Type Dep Marche Abordable</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepMarcheAbordable" id="field_flagTypeDepMarcheAbordable"
+                           formControlName="flagTypeDepMarcheAbordable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepEntraideAlimentaire" for="field_flagTypeDepEntraideAlimentaire">Flag Type Dep Entraide Alimentaire</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepEntraideAlimentaire" id="field_flagTypeDepEntraideAlimentaire"
+                           formControlName="flagTypeDepEntraideAlimentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepFrigoPartage" for="field_flagTypeDepFrigoPartage">Flag Type Dep Frigo Partage</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepFrigoPartage" id="field_flagTypeDepFrigoPartage"
+                           formControlName="flagTypeDepFrigoPartage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagTypeDepAutre" for="field_flagTypeDepAutre">Flag Type Dep Autre</label>
+                    <input type="checkbox" class="form-control" name="flagTypeDepAutre" id="field_flagTypeDepAutre"
+                           formControlName="flagTypeDepAutre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.besoinTechnique" for="field_besoinTechnique">Besoin Technique</label>
+                    <input type="text" class="form-control" name="besoinTechnique" id="field_besoinTechnique"
+                           formControlName="besoinTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.besoinUrgent" for="field_besoinUrgent">Besoin Urgent</label>
+                    <input type="text" class="form-control" name="besoinUrgent" id="field_besoinUrgent"
+                           formControlName="besoinUrgent"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagCamionRegrigere" for="field_flagCamionRegrigere">Flag Camion Regrigere</label>
+                    <input type="checkbox" class="form-control" name="flagCamionRegrigere" id="field_flagCamionRegrigere"
+                           formControlName="flagCamionRegrigere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagPasCongelateur" for="field_flagPasCongelateur">Flag Pas Congelateur</label>
+                    <input type="checkbox" class="form-control" name="flagPasCongelateur" id="field_flagPasCongelateur"
+                           formControlName="flagPasCongelateur"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagCongelateurInd" for="field_flagCongelateurInd">Flag Congelateur Ind</label>
+                    <input type="checkbox" class="form-control" name="flagCongelateurInd" id="field_flagCongelateurInd"
+                           formControlName="flagCongelateurInd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagCongelateurPlainPied" for="field_flagCongelateurPlainPied">Flag Congelateur Plain Pied</label>
+                    <input type="checkbox" class="form-control" name="flagCongelateurPlainPied" id="field_flagCongelateurPlainPied"
+                           formControlName="flagCongelateurPlainPied"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagCongelateurResidentiel" for="field_flagCongelateurResidentiel">Flag Congelateur Residentiel</label>
+                    <input type="checkbox" class="form-control" name="flagCongelateurResidentiel" id="field_flagCongelateurResidentiel"
+                           formControlName="flagCongelateurResidentiel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagPasRefrigerateur" for="field_flagPasRefrigerateur">Flag Pas Refrigerateur</label>
+                    <input type="checkbox" class="form-control" name="flagPasRefrigerateur" id="field_flagPasRefrigerateur"
+                           formControlName="flagPasRefrigerateur"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurInd" for="field_flagRefrigerateurInd">Flag Refrigerateur Ind</label>
+                    <input type="checkbox" class="form-control" name="flagRefrigerateurInd" id="field_flagRefrigerateurInd"
+                           formControlName="flagRefrigerateurInd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurPlainPied" for="field_flagRefrigerateurPlainPied">Flag Refrigerateur Plain Pied</label>
+                    <input type="checkbox" class="form-control" name="flagRefrigerateurPlainPied" id="field_flagRefrigerateurPlainPied"
+                           formControlName="flagRefrigerateurPlainPied"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurResidentiel" for="field_flagRefrigerateurResidentiel">Flag Refrigerateur Residentiel</label>
+                    <input type="checkbox" class="form-control" name="flagRefrigerateurResidentiel" id="field_flagRefrigerateurResidentiel"
+                           formControlName="flagRefrigerateurResidentiel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagAccesGlaciere" for="field_flagAccesGlaciere">Flag Acces Glaciere</label>
+                    <input type="checkbox" class="form-control" name="flagAccesGlaciere" id="field_flagAccesGlaciere"
+                           formControlName="flagAccesGlaciere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagAccesCuisine" for="field_flagAccesCuisine">Flag Acces Cuisine</label>
+                    <input type="checkbox" class="form-control" name="flagAccesCuisine" id="field_flagAccesCuisine"
+                           formControlName="flagAccesCuisine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagAccesVehicule" for="field_flagAccesVehicule">Flag Acces Vehicule</label>
+                    <input type="checkbox" class="form-control" name="flagAccesVehicule" id="field_flagAccesVehicule"
+                           formControlName="flagAccesVehicule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.dateInspection" for="field_dateInspection">Date Inspection</label>
+                    <div class="d-flex">
+                        <input id="field_dateInspection" type="datetime-local" class="form-control" name="dateInspection" formControlName="dateInspection" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.nombreBeneficiaire" for="field_nombreBeneficiaire">Nombre Beneficiaire</label>
+                    <input type="number" class="form-control" name="nombreBeneficiaire" id="field_nombreBeneficiaire"
+                           formControlName="nombreBeneficiaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.prcAugmentationNbBenef" for="field_prcAugmentationNbBenef">Prc Augmentation Nb Benef</label>
+                    <input type="number" class="form-control" name="prcAugmentationNbBenef" id="field_prcAugmentationNbBenef"
+                           formControlName="prcAugmentationNbBenef"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.prcRHPerdue" for="field_prcRHPerdue">Prc RH Perdue</label>
+                    <input type="number" class="form-control" name="prcRHPerdue" id="field_prcRHPerdue"
+                           formControlName="prcRHPerdue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.prcBenevolePerdu" for="field_prcBenevolePerdu">Prc Benevole Perdu</label>
+                    <input type="number" class="form-control" name="prcBenevolePerdu" id="field_prcBenevolePerdu"
+                           formControlName="prcBenevolePerdu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagDenreeSuffisante" for="field_flagDenreeSuffisante">Flag Denree Suffisante</label>
+                    <input type="checkbox" class="form-control" name="flagDenreeSuffisante" id="field_flagDenreeSuffisante"
+                           formControlName="flagDenreeSuffisante"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagRHSuffisant" for="field_flagRHSuffisant">Flag RH Suffisant</label>
+                    <input type="checkbox" class="form-control" name="flagRHSuffisant" id="field_flagRHSuffisant"
+                           formControlName="flagRHSuffisant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagVegetarien" for="field_flagVegetarien">Flag Vegetarien</label>
+                    <input type="checkbox" class="form-control" name="flagVegetarien" id="field_flagVegetarien"
+                           formControlName="flagVegetarien"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagVegetalien" for="field_flagVegetalien">Flag Vegetalien</label>
+                    <input type="checkbox" class="form-control" name="flagVegetalien" id="field_flagVegetalien"
+                           formControlName="flagVegetalien"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagItemSansEtiquette" for="field_flagItemSansEtiquette">Flag Item Sans Etiquette</label>
+                    <input type="checkbox" class="form-control" name="flagItemSansEtiquette" id="field_flagItemSansEtiquette"
+                           formControlName="flagItemSansEtiquette"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagItemDate" for="field_flagItemDate">Flag Item Date</label>
+                    <input type="checkbox" class="form-control" name="flagItemDate" id="field_flagItemDate"
+                           formControlName="flagItemDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagHalal" for="field_flagHalal">Flag Halal</label>
+                    <input type="checkbox" class="form-control" name="flagHalal" id="field_flagHalal"
+                           formControlName="flagHalal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.flagKasher" for="field_flagKasher">Flag Kasher</label>
+                    <input type="checkbox" class="form-control" name="flagKasher" id="field_flagKasher"
+                           formControlName="flagKasher"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.boiteSuggestion" for="field_boiteSuggestion">Boite Suggestion</label>
+                    <input type="text" class="form-control" name="boiteSuggestion" id="field_boiteSuggestion"
+                           formControlName="boiteSuggestion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.autreRessource" for="field_autreRessource">Autre Ressource</label>
+                    <input type="text" class="form-control" name="autreRessource" id="field_autreRessource"
+                           formControlName="autreRessource"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.distanceVeh" for="field_distanceVeh">Distance Veh</label>
+                    <select class="form-control" id="field_distanceVeh" name="distanceVeh" formControlName="distanceVehId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="distanceVehOption.id" *ngFor="let distanceVehOption of distancevehs; trackBy: trackById">{{ distanceVehOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.organisme" for="field_organisme">Organisme</label>
+                    <select class="form-control" id="field_organisme" name="organisme" formControlName="organismeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organismeOption.id" *ngFor="let organismeOption of organismes; trackBy: trackById">{{ organismeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.distanceVelo" for="field_distanceVelo">Distance Velo</label>
+                    <select class="form-control" id="field_distanceVelo" name="distanceVelo" formControlName="distanceVeloId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="distanceVeloOption.id" *ngFor="let distanceVeloOption of distancevelos; trackBy: trackById">{{ distanceVeloOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.demande.etatFrigo" for="field_etatFrigo">Etat Frigo</label>
+                    <select class="form-control" id="field_etatFrigo" name="etatFrigo" formControlName="etatFrigoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="etatFrigoOption.id" *ngFor="let etatFrigoOption of etatfrigos; trackBy: trackById">{{ etatFrigoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

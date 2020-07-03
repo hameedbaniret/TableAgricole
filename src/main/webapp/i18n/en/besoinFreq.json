@@ -1,0 +1,9 @@
+{
+  "tableAgricoleApp": {
+    "BesoinFreq": {
+      "null": "",
+      "PERIODIQUE": "PERIODIQUE",
+      "CONTINU": "CONTINU"
+    }
+  }
+}

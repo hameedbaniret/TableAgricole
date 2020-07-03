@@ -1,0 +1,205 @@
+{
+  "name": "Demande",
+  "fields": [
+    {
+      "fieldName": "idDemande",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "frequence",
+      "fieldType": "Frequence",
+      "fieldValues": "QUOTIDIEN,NFOISSEMAINE,HEBDO,BIMENSUEL,MENSUEL,AUTRE"
+    },
+    {
+      "fieldName": "flagTypeDepDepannageUrgence",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagTypeDepDepannageRegulier",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagTypeDepPopoteRoulante",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagTypeDepMarcheAbordable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagTypeDepEntraideAlimentaire",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagTypeDepFrigoPartage",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagTypeDepAutre",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "besoinTechnique",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "besoinUrgent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "flagCamionRegrigere",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagPasCongelateur",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagCongelateurInd",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagCongelateurPlainPied",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagCongelateurResidentiel",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagPasRefrigerateur",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagRefrigerateurInd",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagRefrigerateurPlainPied",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagRefrigerateurResidentiel",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagAccesGlaciere",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagAccesCuisine",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagAccesVehicule",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "dateInspection",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nombreBeneficiaire",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "prcAugmentationNbBenef",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "prcRHPerdue",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "prcBenevolePerdu",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "flagDenreeSuffisante",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagRHSuffisant",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagVegetarien",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagVegetalien",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagItemSansEtiquette",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagItemDate",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagHalal",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flagKasher",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "boiteSuggestion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autreRessource",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "besoin",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "besoin"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "distanceVeh",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "distanceVeh",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "organisme",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "organisme",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "distanceVelo",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "distanceVelo",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "etatFrigo",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "etatFrigo",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200703013804",
+  "entityTableName": "demande",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "TypeAliment",
+  "fields": [
+    {
+      "fieldName": "idTypeAliment",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dscTypeAliment",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "aliment",
+      "otherEntityRelationshipName": "typeAliment",
+      "relationshipName": "aliment"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "besoin",
+      "otherEntityRelationshipName": "typeAliment",
+      "relationshipName": "besoin"
+    }
+  ],
+  "changelogDate": "20200703013104",
+  "entityTableName": "type_aliment",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

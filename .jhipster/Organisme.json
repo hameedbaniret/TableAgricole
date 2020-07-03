@@ -1,0 +1,53 @@
+{
+  "name": "Organisme",
+  "fields": [
+    {
+      "fieldName": "idOrganisme",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nomOrganisme",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "adresseOrganisme",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phoneOrganisme",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courrielOrganisme",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "organisme",
+      "relationshipName": "demande"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "territoire",
+      "otherEntityRelationshipName": "organisme",
+      "relationshipName": "territoire",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200703013304",
+  "entityTableName": "organisme",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

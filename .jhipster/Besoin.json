@@ -1,0 +1,97 @@
+{
+  "name": "Besoin",
+  "fields": [
+    {
+      "fieldName": "idBesoin",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "besoinFrequence",
+      "fieldType": "BesoinFreq",
+      "fieldValues": "PERIODIQUE,CONTINU"
+    },
+    {
+      "fieldName": "typeBesoin",
+      "fieldType": "TypeBesoin",
+      "fieldValues": "SURPLUSANNONCE,BESOINALIMENT,BESOINBENEVOLE,BESOINRH,SURPLUSAGRI"
+    },
+    {
+      "fieldName": "quantite",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "datePeremption",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateBesoin",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "titreEmploi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tachePrincipale",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nbHeure",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dureeContrat",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dateEntree",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nbBeneficiaire",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "serviceSouhaite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateRecuperation",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "typeAliment",
+      "otherEntityRelationshipName": "besoin",
+      "relationshipName": "typeAliment",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "aliment",
+      "otherEntityRelationshipName": "besoin",
+      "relationshipName": "aliment",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "besoin",
+      "relationshipName": "demande",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200703013404",
+  "entityTableName": "besoin",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

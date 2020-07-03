@@ -1,0 +1,24 @@
+{
+  "tableAgricoleApp": {
+    "territoire": {
+      "home": {
+        "title": "Territoires",
+        "createLabel": "Create a new Territoire",
+        "createOrEditLabel": "Create or edit a Territoire",
+        "notFound": "No Territoires found"
+      },
+      "created": "A new Territoire is created with identifier {{ param }}",
+      "updated": "A Territoire is updated with identifier {{ param }}",
+      "deleted": "A Territoire is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Territoire {{ id }}?"
+      },
+      "detail": {
+        "title": "Territoire"
+      },
+      "idTerritoire": "Id Territoire",
+      "dscTerritoire": "Dsc Territoire",
+      "organisme": "Organisme"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "tableAgricoleApp": {
+    "Frequence": {
+      "null": "",
+      "QUOTIDIEN": "QUOTIDIEN",
+      "NFOISSEMAINE": "NFOISSEMAINE",
+      "HEBDO": "HEBDO",
+      "BIMENSUEL": "BIMENSUEL",
+      "MENSUEL": "MENSUEL",
+      "AUTRE": "AUTRE"
+    }
+  }
+}

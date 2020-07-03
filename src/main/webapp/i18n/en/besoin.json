@@ -1,0 +1,38 @@
+{
+  "tableAgricoleApp": {
+    "besoin": {
+      "home": {
+        "title": "Besoins",
+        "createLabel": "Create a new Besoin",
+        "createOrEditLabel": "Create or edit a Besoin",
+        "notFound": "No Besoins found"
+      },
+      "created": "A new Besoin is created with identifier {{ param }}",
+      "updated": "A Besoin is updated with identifier {{ param }}",
+      "deleted": "A Besoin is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Besoin {{ id }}?"
+      },
+      "detail": {
+        "title": "Besoin"
+      },
+      "idBesoin": "Id Besoin",
+      "besoinFrequence": "Besoin Frequence",
+      "typeBesoin": "Type Besoin",
+      "quantite": "Quantite",
+      "datePeremption": "Date Peremption",
+      "dateBesoin": "Date Besoin",
+      "titreEmploi": "Titre Emploi",
+      "tachePrincipale": "Tache Principale",
+      "nbHeure": "Nb Heure",
+      "dureeContrat": "Duree Contrat",
+      "dateEntree": "Date Entree",
+      "nbBeneficiaire": "Nb Beneficiaire",
+      "serviceSouhaite": "Service Souhaite",
+      "dateRecuperation": "Date Recuperation",
+      "typeAliment": "Type Aliment",
+      "aliment": "Aliment",
+      "demande": "Demande"
+    }
+  }
+}

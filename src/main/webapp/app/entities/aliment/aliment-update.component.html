@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-aliment-heading" jhiTranslate="tableAgricoleApp.aliment.home.createOrEditLabel">Create or edit a Aliment</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.aliment.idAliment" for="field_idAliment">Id Aliment</label>
+                    <input type="number" class="form-control" name="idAliment" id="field_idAliment"
+                           formControlName="idAliment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.aliment.dscAliment" for="field_dscAliment">Dsc Aliment</label>
+                    <input type="text" class="form-control" name="dscAliment" id="field_dscAliment"
+                           formControlName="dscAliment"/>
+                    <div *ngIf="editForm.get('dscAliment')!.invalid && (editForm.get('dscAliment')!.dirty || editForm.get('dscAliment')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dscAliment')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.aliment.typeAliment" for="field_typeAliment">Type Aliment</label>
+                    <select class="form-control" id="field_typeAliment" name="typeAliment" formControlName="typeAlimentId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="typeAlimentOption.id" *ngFor="let typeAlimentOption of typealiments; trackBy: trackById">{{ typeAlimentOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

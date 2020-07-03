@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Demande.
+    -->
+    <changeSet id="20200703013804-1" author="jhipster">
+        <createTable tableName="demande">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_demande" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="frequence" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_depannage_urgence" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_depannage_regulier" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_popote_roulante" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_marche_abordable" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_entraide_alimentaire" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_frigo_partage" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_type_dep_autre" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="besoin_technique" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="besoin_urgent" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_camion_regrigere" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_pas_congelateur" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_congelateur_ind" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_congelateur_plain_pied" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_congelateur_residentiel" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_pas_refrigerateur" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_refrigerateur_ind" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_refrigerateur_plain_pied" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_refrigerateur_residentiel" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_acces_glaciere" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_acces_cuisine" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_acces_vehicule" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_inspection" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_beneficiaire" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="prc_augmentation_nb_benef" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="prc_rh_perdue" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="prc_benevole_perdu" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_denree_suffisante" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_rh_suffisant" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_vegetarien" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_vegetalien" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_item_sans_etiquette" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_item_date" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_halal" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_kasher" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="boite_suggestion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_ressource" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="distance_veh_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="organisme_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="distance_velo_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="etat_frigo_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="demande" columnName="date_inspection" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20200703013804-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200703013804-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/demande.csv"
+                  separator=";"
+                  tableName="demande">
+            <column name="id" type="numeric"/>
+            <column name="id_demande" type="numeric"/>
+            <column name="frequence" type="string"/>
+            <column name="flag_type_dep_depannage_urgence" type="boolean"/>
+            <column name="flag_type_dep_depannage_regulier" type="boolean"/>
+            <column name="flag_type_dep_popote_roulante" type="boolean"/>
+            <column name="flag_type_dep_marche_abordable" type="boolean"/>
+            <column name="flag_type_dep_entraide_alimentaire" type="boolean"/>
+            <column name="flag_type_dep_frigo_partage" type="boolean"/>
+            <column name="flag_type_dep_autre" type="boolean"/>
+            <column name="besoin_technique" type="string"/>
+            <column name="besoin_urgent" type="string"/>
+            <column name="flag_camion_regrigere" type="boolean"/>
+            <column name="flag_pas_congelateur" type="boolean"/>
+            <column name="flag_congelateur_ind" type="boolean"/>
+            <column name="flag_congelateur_plain_pied" type="boolean"/>
+            <column name="flag_congelateur_residentiel" type="boolean"/>
+            <column name="flag_pas_refrigerateur" type="boolean"/>
+            <column name="flag_refrigerateur_ind" type="boolean"/>
+            <column name="flag_refrigerateur_plain_pied" type="boolean"/>
+            <column name="flag_refrigerateur_residentiel" type="boolean"/>
+            <column name="flag_acces_glaciere" type="boolean"/>
+            <column name="flag_acces_cuisine" type="boolean"/>
+            <column name="flag_acces_vehicule" type="boolean"/>
+            <column name="date_inspection" type="datetime"/>
+            <column name="nombre_beneficiaire" type="numeric"/>
+            <column name="prc_augmentation_nb_benef" type="numeric"/>
+            <column name="prc_rh_perdue" type="numeric"/>
+            <column name="prc_benevole_perdu" type="numeric"/>
+            <column name="flag_denree_suffisante" type="boolean"/>
+            <column name="flag_rh_suffisant" type="boolean"/>
+            <column name="flag_vegetarien" type="boolean"/>
+            <column name="flag_vegetalien" type="boolean"/>
+            <column name="flag_item_sans_etiquette" type="boolean"/>
+            <column name="flag_item_date" type="boolean"/>
+            <column name="flag_halal" type="boolean"/>
+            <column name="flag_kasher" type="boolean"/>
+            <column name="boite_suggestion" type="string"/>
+            <column name="autre_ressource" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-organisme-heading" jhiTranslate="tableAgricoleApp.organisme.home.createOrEditLabel">Create or edit a Organisme</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.organisme.idOrganisme" for="field_idOrganisme">Id Organisme</label>
+                    <input type="number" class="form-control" name="idOrganisme" id="field_idOrganisme"
+                           formControlName="idOrganisme"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.organisme.nomOrganisme" for="field_nomOrganisme">Nom Organisme</label>
+                    <input type="text" class="form-control" name="nomOrganisme" id="field_nomOrganisme"
+                           formControlName="nomOrganisme"/>
+                    <div *ngIf="editForm.get('nomOrganisme')!.invalid && (editForm.get('nomOrganisme')!.dirty || editForm.get('nomOrganisme')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nomOrganisme')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.organisme.adresseOrganisme" for="field_adresseOrganisme">Adresse Organisme</label>
+                    <input type="text" class="form-control" name="adresseOrganisme" id="field_adresseOrganisme"
+                           formControlName="adresseOrganisme"/>
+                    <div *ngIf="editForm.get('adresseOrganisme')!.invalid && (editForm.get('adresseOrganisme')!.dirty || editForm.get('adresseOrganisme')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('adresseOrganisme')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.organisme.phoneOrganisme" for="field_phoneOrganisme">Phone Organisme</label>
+                    <input type="text" class="form-control" name="phoneOrganisme" id="field_phoneOrganisme"
+                           formControlName="phoneOrganisme"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.organisme.courrielOrganisme" for="field_courrielOrganisme">Courriel Organisme</label>
+                    <input type="text" class="form-control" name="courrielOrganisme" id="field_courrielOrganisme"
+                           formControlName="courrielOrganisme"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.organisme.territoire" for="field_territoire">Territoire</label>
+                    <select class="form-control" id="field_territoire" name="territoire" formControlName="territoireId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="territoireOption.id" *ngFor="let territoireOption of territoires; trackBy: trackById">{{ territoireOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

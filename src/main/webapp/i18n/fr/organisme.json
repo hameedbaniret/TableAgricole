@@ -1,0 +1,28 @@
+{
+  "tableAgricoleApp": {
+    "organisme": {
+      "home": {
+        "title": "Organismes",
+        "createLabel": "Créer un nouveau Organisme",
+        "createOrEditLabel": "Créer ou éditer un Organisme",
+        "notFound": "Aucun Organisme trouvé"
+      },
+      "created": "Un nouveau Organisme a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Organisme avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Organisme avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Organisme {{ id }} ?"
+      },
+      "detail": {
+        "title": "Organisme"
+      },
+      "idOrganisme": "Id Organisme",
+      "nomOrganisme": "Nom Organisme",
+      "adresseOrganisme": "Adresse Organisme",
+      "phoneOrganisme": "Phone Organisme",
+      "courrielOrganisme": "Courriel Organisme",
+      "demande": "Demande",
+      "territoire": "Territoire"
+    }
+  }
+}

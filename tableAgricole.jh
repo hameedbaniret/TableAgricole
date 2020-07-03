@@ -1,0 +1,131 @@
+entity Territoire {
+	idTerritoire Long,
+    dscTerritoire String required
+}
+enum Frequence {
+	QUOTIDIEN, NFOISSEMAINE, HEBDO, BIMENSUEL, MENSUEL, AUTRE
+}
+
+entity TypeAliment {
+	idTypeAliment Long,
+    dscTypeAliment String required
+}
+entity Aliment {
+	idAliment Long,
+    dscAliment String required
+}
+enum BesoinFreq {
+	PERIODIQUE, CONTINU
+}
+entity Organisme {
+	idOrganisme Long,
+    nomOrganisme String required,
+    adresseOrganisme String required,
+    phoneOrganisme String,
+    courrielOrganisme String
+}
+enum TypeBesoin {
+	SURPLUSANNONCE, BESOINALIMENT, BESOINBENEVOLE, BESOINRH, SURPLUSAGRI
+}
+entity Besoin {
+	idBesoin Long,
+    besoinFrequence BesoinFreq,
+    typeBesoin TypeBesoin,
+    quantite Long ,
+    datePeremption Instant,
+    dateBesoin Instant ,
+    titreEmploi String,
+    tachePrincipale String,
+    nbHeure Long,
+    dureeContrat Long,
+    dateEntree Instant,
+    nbBeneficiaire Long,
+    serviceSouhaite String,
+    dateRecuperation Instant
+}
+
+entity DistanceVeh {
+	idDistanceVeh Long,
+    dscDistanceVeh String required
+}
+entity DistanceVelo {
+	idDistanceVelo Long,
+    dscDistanceVelo String required
+}	
+entity EtatFrigo {
+	idEtatFrigo Long,
+    dscEtatFrigo String required
+}
+entity Demande {
+	idDemande Long,
+    frequence Frequence,
+    // type depannage
+   flagTypeDepDepannageUrgence Boolean,
+   flagTypeDepDepannageRegulier Boolean,
+   flagTypeDepPopoteRoulante Boolean,
+   flagTypeDepMarcheAbordable Boolean,
+   flagTypeDepEntraideAlimentaire Boolean,
+   flagTypeDepFrigoPartage Boolean,
+   flagTypeDepAutre Boolean,
+   //
+   besoinTechnique String,
+   besoinUrgent  String,
+   //Congelateur
+   flagCamionRegrigere Boolean,
+   flagPasCongelateur Boolean,
+   flagCongelateurInd Boolean,
+   flagCongelateurPlainPied Boolean,
+   flagCongelateurResidentiel Boolean,
+   // Réfrigérateur
+   flagPasRefrigerateur Boolean,
+   flagRefrigerateurInd Boolean,
+   flagRefrigerateurPlainPied Boolean,
+   flagRefrigerateurResidentiel Boolean,
+   // autre
+   flagAccesGlaciere Boolean,
+   flagAccesCuisine Boolean,
+   flagAccesVehicule Boolean,
+   dateInspection Instant,
+   nombreBeneficiaire Long,
+   prcAugmentationNbBenef Long,
+   prcRHPerdue Long,
+   prcBenevolePerdu Long,
+   flagDenreeSuffisante Boolean,
+   flagRHSuffisant Boolean,
+   //Particularité
+   flagVegetarien Boolean,
+   flagVegetalien Boolean,
+   flagItemSansEtiquette Boolean,
+   flagItemDate Boolean,
+   flagHalal Boolean,
+   flagKasher Boolean,
+   // Autres Informations
+   boiteSuggestion String,
+   autreRessource String
+  
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	  TypeAliment to Aliment{TypeAliment},
+      Territoire to Organisme{Territoire},
+      TypeAliment to Besoin{TypeAliment},
+      Aliment to Besoin{Aliment},
+      DistanceVeh to Demande{DistanceVeh},
+      Organisme to Demande{Organisme},
+      DistanceVelo to Demande{DistanceVelo},
+      EtatFrigo to Demande{EtatFrigo},
+      Demande to Besoin{Demande},
+}
+
+// Set pagination options
+paginate Demande, Besoin with pagination
+
+// Use Data Transfert Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

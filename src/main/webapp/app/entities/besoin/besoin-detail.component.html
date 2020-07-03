@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="besoin">
+            <h2><span jhiTranslate="tableAgricoleApp.besoin.detail.title">Besoin</span> {{ besoin.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.idBesoin">Id Besoin</span></dt>
+                <dd>
+                    <span>{{ besoin.idBesoin }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.besoinFrequence">Besoin Frequence</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'tableAgricoleApp.BesoinFreq.' + besoin.besoinFrequence }}">{{ besoin.besoinFrequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.typeBesoin">Type Besoin</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'tableAgricoleApp.TypeBesoin.' + besoin.typeBesoin }}">{{ besoin.typeBesoin }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.quantite">Quantite</span></dt>
+                <dd>
+                    <span>{{ besoin.quantite }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.datePeremption">Date Peremption</span></dt>
+                <dd>
+                    <span>{{ besoin.datePeremption }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.dateBesoin">Date Besoin</span></dt>
+                <dd>
+                    <span>{{ besoin.dateBesoin }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.titreEmploi">Titre Emploi</span></dt>
+                <dd>
+                    <span>{{ besoin.titreEmploi }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.tachePrincipale">Tache Principale</span></dt>
+                <dd>
+                    <span>{{ besoin.tachePrincipale }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.nbHeure">Nb Heure</span></dt>
+                <dd>
+                    <span>{{ besoin.nbHeure }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.dureeContrat">Duree Contrat</span></dt>
+                <dd>
+                    <span>{{ besoin.dureeContrat }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.dateEntree">Date Entree</span></dt>
+                <dd>
+                    <span>{{ besoin.dateEntree }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.nbBeneficiaire">Nb Beneficiaire</span></dt>
+                <dd>
+                    <span>{{ besoin.nbBeneficiaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.serviceSouhaite">Service Souhaite</span></dt>
+                <dd>
+                    <span>{{ besoin.serviceSouhaite }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.dateRecuperation">Date Recuperation</span></dt>
+                <dd>
+                    <span>{{ besoin.dateRecuperation }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.typeAliment">Type Aliment</span></dt>
+                <dd>
+                    <div *ngIf="besoin.typeAlimentId">
+                        <a [routerLink]="['/type-aliment', besoin.typeAlimentId, 'view']">{{ besoin.typeAlimentId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.aliment">Aliment</span></dt>
+                <dd>
+                    <div *ngIf="besoin.alimentId">
+                        <a [routerLink]="['/aliment', besoin.alimentId, 'view']">{{ besoin.alimentId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.besoin.demande">Demande</span></dt>
+                <dd>
+                    <div *ngIf="besoin.demandeId">
+                        <a [routerLink]="['/demande', besoin.demandeId, 'view']">{{ besoin.demandeId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/besoin', besoin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+export const enum Frequence {
+  QUOTIDIEN = 'QUOTIDIEN',
+
+  NFOISSEMAINE = 'NFOISSEMAINE',
+
+  HEBDO = 'HEBDO',
+
+  BIMENSUEL = 'BIMENSUEL',
+
+  MENSUEL = 'MENSUEL',
+
+  AUTRE = 'AUTRE',
+}

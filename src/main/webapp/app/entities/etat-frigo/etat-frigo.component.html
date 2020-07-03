@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="tableAgricoleApp.etatFrigo.home.title">Etat Frigos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-etat-frigo" [routerLink]="['/etat-frigo/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="tableAgricoleApp.etatFrigo.home.createLabel">
+            Create a new Etat Frigo
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="etatFrigos?.length === 0">
+        <span jhiTranslate="tableAgricoleApp.etatFrigo.home.notFound">No etatFrigos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="etatFrigos && etatFrigos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="tableAgricoleApp.etatFrigo.idEtatFrigo">Id Etat Frigo</span></th>
+                    <th scope="col" ><span jhiTranslate="tableAgricoleApp.etatFrigo.dscEtatFrigo">Dsc Etat Frigo</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let etatFrigo of etatFrigos ;trackBy: trackId">
+                    <td><a [routerLink]="['/etat-frigo', etatFrigo.id, 'view']">{{ etatFrigo.id }}</a></td>
+                    <td>{{ etatFrigo.idEtatFrigo }}</td>
+                    <td>{{ etatFrigo.dscEtatFrigo }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/etat-frigo', etatFrigo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/etat-frigo', etatFrigo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(etatFrigo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

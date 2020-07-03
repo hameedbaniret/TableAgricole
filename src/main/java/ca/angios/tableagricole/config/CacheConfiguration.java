@@ -47,6 +47,24 @@ public class CacheConfiguration {
             createCache(cm, ca.angios.tableagricole.domain.User.class.getName());
             createCache(cm, ca.angios.tableagricole.domain.Authority.class.getName());
             createCache(cm, ca.angios.tableagricole.domain.User.class.getName() + ".authorities");
+            createCache(cm, ca.angios.tableagricole.domain.Territoire.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.Territoire.class.getName() + ".organismes");
+            createCache(cm, ca.angios.tableagricole.domain.TypeAliment.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.TypeAliment.class.getName() + ".aliments");
+            createCache(cm, ca.angios.tableagricole.domain.TypeAliment.class.getName() + ".besoins");
+            createCache(cm, ca.angios.tableagricole.domain.Aliment.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.Aliment.class.getName() + ".besoins");
+            createCache(cm, ca.angios.tableagricole.domain.Organisme.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.Organisme.class.getName() + ".demandes");
+            createCache(cm, ca.angios.tableagricole.domain.Besoin.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.DistanceVeh.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.DistanceVeh.class.getName() + ".demandes");
+            createCache(cm, ca.angios.tableagricole.domain.DistanceVelo.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.DistanceVelo.class.getName() + ".demandes");
+            createCache(cm, ca.angios.tableagricole.domain.EtatFrigo.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.EtatFrigo.class.getName() + ".demandes");
+            createCache(cm, ca.angios.tableagricole.domain.Demande.class.getName());
+            createCache(cm, ca.angios.tableagricole.domain.Demande.class.getName() + ".besoins");
             // jhipster-needle-ehcache-add-entry
         };
     }

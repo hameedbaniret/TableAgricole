@@ -1,0 +1,24 @@
+{
+  "tableAgricoleApp": {
+    "distanceVelo": {
+      "home": {
+        "title": "Distance Velos",
+        "createLabel": "Create a new Distance Velo",
+        "createOrEditLabel": "Create or edit a Distance Velo",
+        "notFound": "No Distance Velos found"
+      },
+      "created": "A new Distance Velo is created with identifier {{ param }}",
+      "updated": "A Distance Velo is updated with identifier {{ param }}",
+      "deleted": "A Distance Velo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Distance Velo {{ id }}?"
+      },
+      "detail": {
+        "title": "Distance Velo"
+      },
+      "idDistanceVelo": "Id Distance Velo",
+      "dscDistanceVelo": "Dsc Distance Velo",
+      "demande": "Demande"
+    }
+  }
+}

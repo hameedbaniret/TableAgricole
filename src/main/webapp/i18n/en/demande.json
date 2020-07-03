@@ -1,0 +1,64 @@
+{
+  "tableAgricoleApp": {
+    "demande": {
+      "home": {
+        "title": "Demandes",
+        "createLabel": "Create a new Demande",
+        "createOrEditLabel": "Create or edit a Demande",
+        "notFound": "No Demandes found"
+      },
+      "created": "A new Demande is created with identifier {{ param }}",
+      "updated": "A Demande is updated with identifier {{ param }}",
+      "deleted": "A Demande is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Demande {{ id }}?"
+      },
+      "detail": {
+        "title": "Demande"
+      },
+      "idDemande": "Id Demande",
+      "frequence": "Frequence",
+      "flagTypeDepDepannageUrgence": "Flag Type Dep Depannage Urgence",
+      "flagTypeDepDepannageRegulier": "Flag Type Dep Depannage Regulier",
+      "flagTypeDepPopoteRoulante": "Flag Type Dep Popote Roulante",
+      "flagTypeDepMarcheAbordable": "Flag Type Dep Marche Abordable",
+      "flagTypeDepEntraideAlimentaire": "Flag Type Dep Entraide Alimentaire",
+      "flagTypeDepFrigoPartage": "Flag Type Dep Frigo Partage",
+      "flagTypeDepAutre": "Flag Type Dep Autre",
+      "besoinTechnique": "Besoin Technique",
+      "besoinUrgent": "Besoin Urgent",
+      "flagCamionRegrigere": "Flag Camion Regrigere",
+      "flagPasCongelateur": "Flag Pas Congelateur",
+      "flagCongelateurInd": "Flag Congelateur Ind",
+      "flagCongelateurPlainPied": "Flag Congelateur Plain Pied",
+      "flagCongelateurResidentiel": "Flag Congelateur Residentiel",
+      "flagPasRefrigerateur": "Flag Pas Refrigerateur",
+      "flagRefrigerateurInd": "Flag Refrigerateur Ind",
+      "flagRefrigerateurPlainPied": "Flag Refrigerateur Plain Pied",
+      "flagRefrigerateurResidentiel": "Flag Refrigerateur Residentiel",
+      "flagAccesGlaciere": "Flag Acces Glaciere",
+      "flagAccesCuisine": "Flag Acces Cuisine",
+      "flagAccesVehicule": "Flag Acces Vehicule",
+      "dateInspection": "Date Inspection",
+      "nombreBeneficiaire": "Nombre Beneficiaire",
+      "prcAugmentationNbBenef": "Prc Augmentation Nb Benef",
+      "prcRHPerdue": "Prc RH Perdue",
+      "prcBenevolePerdu": "Prc Benevole Perdu",
+      "flagDenreeSuffisante": "Flag Denree Suffisante",
+      "flagRHSuffisant": "Flag RH Suffisant",
+      "flagVegetarien": "Flag Vegetarien",
+      "flagVegetalien": "Flag Vegetalien",
+      "flagItemSansEtiquette": "Flag Item Sans Etiquette",
+      "flagItemDate": "Flag Item Date",
+      "flagHalal": "Flag Halal",
+      "flagKasher": "Flag Kasher",
+      "boiteSuggestion": "Boite Suggestion",
+      "autreRessource": "Autre Ressource",
+      "besoin": "Besoin",
+      "distanceVeh": "Distance Veh",
+      "organisme": "Organisme",
+      "distanceVelo": "Distance Velo",
+      "etatFrigo": "Etat Frigo"
+    }
+  }
+}

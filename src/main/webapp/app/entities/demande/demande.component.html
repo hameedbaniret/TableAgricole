@@ -1,0 +1,169 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="tableAgricoleApp.demande.home.title">Demandes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-demande" [routerLink]="['/demande/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="tableAgricoleApp.demande.home.createLabel">
+            Create a new Demande
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="demandes?.length === 0">
+        <span jhiTranslate="tableAgricoleApp.demande.home.notFound">No demandes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="demandes && demandes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idDemande"><span jhiTranslate="tableAgricoleApp.demande.idDemande">Id Demande</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="frequence"><span jhiTranslate="tableAgricoleApp.demande.frequence">Frequence</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepDepannageUrgence"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepDepannageUrgence">Flag Type Dep Depannage Urgence</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepDepannageRegulier"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepDepannageRegulier">Flag Type Dep Depannage Regulier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepPopoteRoulante"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepPopoteRoulante">Flag Type Dep Popote Roulante</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepMarcheAbordable"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepMarcheAbordable">Flag Type Dep Marche Abordable</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepEntraideAlimentaire"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepEntraideAlimentaire">Flag Type Dep Entraide Alimentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepFrigoPartage"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepFrigoPartage">Flag Type Dep Frigo Partage</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagTypeDepAutre"><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepAutre">Flag Type Dep Autre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="besoinTechnique"><span jhiTranslate="tableAgricoleApp.demande.besoinTechnique">Besoin Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="besoinUrgent"><span jhiTranslate="tableAgricoleApp.demande.besoinUrgent">Besoin Urgent</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagCamionRegrigere"><span jhiTranslate="tableAgricoleApp.demande.flagCamionRegrigere">Flag Camion Regrigere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagPasCongelateur"><span jhiTranslate="tableAgricoleApp.demande.flagPasCongelateur">Flag Pas Congelateur</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagCongelateurInd"><span jhiTranslate="tableAgricoleApp.demande.flagCongelateurInd">Flag Congelateur Ind</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagCongelateurPlainPied"><span jhiTranslate="tableAgricoleApp.demande.flagCongelateurPlainPied">Flag Congelateur Plain Pied</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagCongelateurResidentiel"><span jhiTranslate="tableAgricoleApp.demande.flagCongelateurResidentiel">Flag Congelateur Residentiel</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagPasRefrigerateur"><span jhiTranslate="tableAgricoleApp.demande.flagPasRefrigerateur">Flag Pas Refrigerateur</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagRefrigerateurInd"><span jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurInd">Flag Refrigerateur Ind</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagRefrigerateurPlainPied"><span jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurPlainPied">Flag Refrigerateur Plain Pied</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagRefrigerateurResidentiel"><span jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurResidentiel">Flag Refrigerateur Residentiel</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagAccesGlaciere"><span jhiTranslate="tableAgricoleApp.demande.flagAccesGlaciere">Flag Acces Glaciere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagAccesCuisine"><span jhiTranslate="tableAgricoleApp.demande.flagAccesCuisine">Flag Acces Cuisine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagAccesVehicule"><span jhiTranslate="tableAgricoleApp.demande.flagAccesVehicule">Flag Acces Vehicule</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateInspection"><span jhiTranslate="tableAgricoleApp.demande.dateInspection">Date Inspection</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nombreBeneficiaire"><span jhiTranslate="tableAgricoleApp.demande.nombreBeneficiaire">Nombre Beneficiaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prcAugmentationNbBenef"><span jhiTranslate="tableAgricoleApp.demande.prcAugmentationNbBenef">Prc Augmentation Nb Benef</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prcRHPerdue"><span jhiTranslate="tableAgricoleApp.demande.prcRHPerdue">Prc RH Perdue</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prcBenevolePerdu"><span jhiTranslate="tableAgricoleApp.demande.prcBenevolePerdu">Prc Benevole Perdu</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagDenreeSuffisante"><span jhiTranslate="tableAgricoleApp.demande.flagDenreeSuffisante">Flag Denree Suffisante</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagRHSuffisant"><span jhiTranslate="tableAgricoleApp.demande.flagRHSuffisant">Flag RH Suffisant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagVegetarien"><span jhiTranslate="tableAgricoleApp.demande.flagVegetarien">Flag Vegetarien</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagVegetalien"><span jhiTranslate="tableAgricoleApp.demande.flagVegetalien">Flag Vegetalien</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagItemSansEtiquette"><span jhiTranslate="tableAgricoleApp.demande.flagItemSansEtiquette">Flag Item Sans Etiquette</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagItemDate"><span jhiTranslate="tableAgricoleApp.demande.flagItemDate">Flag Item Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagHalal"><span jhiTranslate="tableAgricoleApp.demande.flagHalal">Flag Halal</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagKasher"><span jhiTranslate="tableAgricoleApp.demande.flagKasher">Flag Kasher</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="boiteSuggestion"><span jhiTranslate="tableAgricoleApp.demande.boiteSuggestion">Boite Suggestion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autreRessource"><span jhiTranslate="tableAgricoleApp.demande.autreRessource">Autre Ressource</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="distanceVehId"><span jhiTranslate="tableAgricoleApp.demande.distanceVeh">Distance Veh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="organismeId"><span jhiTranslate="tableAgricoleApp.demande.organisme">Organisme</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="distanceVeloId"><span jhiTranslate="tableAgricoleApp.demande.distanceVelo">Distance Velo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatFrigoId"><span jhiTranslate="tableAgricoleApp.demande.etatFrigo">Etat Frigo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let demande of demandes ;trackBy: trackId">
+                    <td><a [routerLink]="['/demande', demande.id, 'view']">{{ demande.id }}</a></td>
+                    <td>{{ demande.idDemande }}</td>
+                    <td jhiTranslate="{{ 'tableAgricoleApp.Frequence.' + demande.frequence }}">{{ demande.frequence }}</td>
+                    <td>{{ demande.flagTypeDepDepannageUrgence }}</td>
+                    <td>{{ demande.flagTypeDepDepannageRegulier }}</td>
+                    <td>{{ demande.flagTypeDepPopoteRoulante }}</td>
+                    <td>{{ demande.flagTypeDepMarcheAbordable }}</td>
+                    <td>{{ demande.flagTypeDepEntraideAlimentaire }}</td>
+                    <td>{{ demande.flagTypeDepFrigoPartage }}</td>
+                    <td>{{ demande.flagTypeDepAutre }}</td>
+                    <td>{{ demande.besoinTechnique }}</td>
+                    <td>{{ demande.besoinUrgent }}</td>
+                    <td>{{ demande.flagCamionRegrigere }}</td>
+                    <td>{{ demande.flagPasCongelateur }}</td>
+                    <td>{{ demande.flagCongelateurInd }}</td>
+                    <td>{{ demande.flagCongelateurPlainPied }}</td>
+                    <td>{{ demande.flagCongelateurResidentiel }}</td>
+                    <td>{{ demande.flagPasRefrigerateur }}</td>
+                    <td>{{ demande.flagRefrigerateurInd }}</td>
+                    <td>{{ demande.flagRefrigerateurPlainPied }}</td>
+                    <td>{{ demande.flagRefrigerateurResidentiel }}</td>
+                    <td>{{ demande.flagAccesGlaciere }}</td>
+                    <td>{{ demande.flagAccesCuisine }}</td>
+                    <td>{{ demande.flagAccesVehicule }}</td>
+                    <td>{{ demande.dateInspection | date:'medium' }}</td>
+                    <td>{{ demande.nombreBeneficiaire }}</td>
+                    <td>{{ demande.prcAugmentationNbBenef }}</td>
+                    <td>{{ demande.prcRHPerdue }}</td>
+                    <td>{{ demande.prcBenevolePerdu }}</td>
+                    <td>{{ demande.flagDenreeSuffisante }}</td>
+                    <td>{{ demande.flagRHSuffisant }}</td>
+                    <td>{{ demande.flagVegetarien }}</td>
+                    <td>{{ demande.flagVegetalien }}</td>
+                    <td>{{ demande.flagItemSansEtiquette }}</td>
+                    <td>{{ demande.flagItemDate }}</td>
+                    <td>{{ demande.flagHalal }}</td>
+                    <td>{{ demande.flagKasher }}</td>
+                    <td>{{ demande.boiteSuggestion }}</td>
+                    <td>{{ demande.autreRessource }}</td>
+                    <td>
+                        <div *ngIf="demande.distanceVehId">
+                            <a [routerLink]="['/distance-veh', demande.distanceVehId , 'view']" >{{ demande.distanceVehId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="demande.organismeId">
+                            <a [routerLink]="['/organisme', demande.organismeId , 'view']" >{{ demande.organismeId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="demande.distanceVeloId">
+                            <a [routerLink]="['/distance-velo', demande.distanceVeloId , 'view']" >{{ demande.distanceVeloId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="demande.etatFrigoId">
+                            <a [routerLink]="['/etat-frigo', demande.etatFrigoId , 'view']" >{{ demande.etatFrigoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/demande', demande.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/demande', demande.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(demande)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="demandes && demandes.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

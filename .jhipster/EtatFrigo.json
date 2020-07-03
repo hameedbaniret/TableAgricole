@@ -1,0 +1,33 @@
+{
+  "name": "EtatFrigo",
+  "fields": [
+    {
+      "fieldName": "idEtatFrigo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dscEtatFrigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "etatFrigo",
+      "relationshipName": "demande"
+    }
+  ],
+  "changelogDate": "20200703013704",
+  "entityTableName": "etat_frigo",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

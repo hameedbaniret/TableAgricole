@@ -1,0 +1,12 @@
+{
+  "tableAgricoleApp": {
+    "TypeBesoin": {
+      "null": "",
+      "SURPLUSANNONCE": "SURPLUSANNONCE",
+      "BESOINALIMENT": "BESOINALIMENT",
+      "BESOINBENEVOLE": "BESOINBENEVOLE",
+      "BESOINRH": "BESOINRH",
+      "SURPLUSAGRI": "SURPLUSAGRI"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demande">
+            <h2><span jhiTranslate="tableAgricoleApp.demande.detail.title">Demande</span> {{ demande.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tableAgricoleApp.demande.idDemande">Id Demande</span></dt>
+                <dd>
+                    <span>{{ demande.idDemande }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.frequence">Frequence</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'tableAgricoleApp.Frequence.' + demande.frequence }}">{{ demande.frequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepDepannageUrgence">Flag Type Dep Depannage Urgence</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepDepannageUrgence }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepDepannageRegulier">Flag Type Dep Depannage Regulier</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepDepannageRegulier }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepPopoteRoulante">Flag Type Dep Popote Roulante</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepPopoteRoulante }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepMarcheAbordable">Flag Type Dep Marche Abordable</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepMarcheAbordable }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepEntraideAlimentaire">Flag Type Dep Entraide Alimentaire</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepEntraideAlimentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepFrigoPartage">Flag Type Dep Frigo Partage</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepFrigoPartage }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagTypeDepAutre">Flag Type Dep Autre</span></dt>
+                <dd>
+                    <span>{{ demande.flagTypeDepAutre }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.besoinTechnique">Besoin Technique</span></dt>
+                <dd>
+                    <span>{{ demande.besoinTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.besoinUrgent">Besoin Urgent</span></dt>
+                <dd>
+                    <span>{{ demande.besoinUrgent }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagCamionRegrigere">Flag Camion Regrigere</span></dt>
+                <dd>
+                    <span>{{ demande.flagCamionRegrigere }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagPasCongelateur">Flag Pas Congelateur</span></dt>
+                <dd>
+                    <span>{{ demande.flagPasCongelateur }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagCongelateurInd">Flag Congelateur Ind</span></dt>
+                <dd>
+                    <span>{{ demande.flagCongelateurInd }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagCongelateurPlainPied">Flag Congelateur Plain Pied</span></dt>
+                <dd>
+                    <span>{{ demande.flagCongelateurPlainPied }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagCongelateurResidentiel">Flag Congelateur Residentiel</span></dt>
+                <dd>
+                    <span>{{ demande.flagCongelateurResidentiel }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagPasRefrigerateur">Flag Pas Refrigerateur</span></dt>
+                <dd>
+                    <span>{{ demande.flagPasRefrigerateur }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurInd">Flag Refrigerateur Ind</span></dt>
+                <dd>
+                    <span>{{ demande.flagRefrigerateurInd }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurPlainPied">Flag Refrigerateur Plain Pied</span></dt>
+                <dd>
+                    <span>{{ demande.flagRefrigerateurPlainPied }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagRefrigerateurResidentiel">Flag Refrigerateur Residentiel</span></dt>
+                <dd>
+                    <span>{{ demande.flagRefrigerateurResidentiel }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagAccesGlaciere">Flag Acces Glaciere</span></dt>
+                <dd>
+                    <span>{{ demande.flagAccesGlaciere }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagAccesCuisine">Flag Acces Cuisine</span></dt>
+                <dd>
+                    <span>{{ demande.flagAccesCuisine }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagAccesVehicule">Flag Acces Vehicule</span></dt>
+                <dd>
+                    <span>{{ demande.flagAccesVehicule }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.dateInspection">Date Inspection</span></dt>
+                <dd>
+                    <span>{{ demande.dateInspection }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.nombreBeneficiaire">Nombre Beneficiaire</span></dt>
+                <dd>
+                    <span>{{ demande.nombreBeneficiaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.prcAugmentationNbBenef">Prc Augmentation Nb Benef</span></dt>
+                <dd>
+                    <span>{{ demande.prcAugmentationNbBenef }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.prcRHPerdue">Prc RH Perdue</span></dt>
+                <dd>
+                    <span>{{ demande.prcRHPerdue }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.prcBenevolePerdu">Prc Benevole Perdu</span></dt>
+                <dd>
+                    <span>{{ demande.prcBenevolePerdu }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagDenreeSuffisante">Flag Denree Suffisante</span></dt>
+                <dd>
+                    <span>{{ demande.flagDenreeSuffisante }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagRHSuffisant">Flag RH Suffisant</span></dt>
+                <dd>
+                    <span>{{ demande.flagRHSuffisant }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagVegetarien">Flag Vegetarien</span></dt>
+                <dd>
+                    <span>{{ demande.flagVegetarien }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagVegetalien">Flag Vegetalien</span></dt>
+                <dd>
+                    <span>{{ demande.flagVegetalien }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagItemSansEtiquette">Flag Item Sans Etiquette</span></dt>
+                <dd>
+                    <span>{{ demande.flagItemSansEtiquette }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagItemDate">Flag Item Date</span></dt>
+                <dd>
+                    <span>{{ demande.flagItemDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagHalal">Flag Halal</span></dt>
+                <dd>
+                    <span>{{ demande.flagHalal }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.flagKasher">Flag Kasher</span></dt>
+                <dd>
+                    <span>{{ demande.flagKasher }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.boiteSuggestion">Boite Suggestion</span></dt>
+                <dd>
+                    <span>{{ demande.boiteSuggestion }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.autreRessource">Autre Ressource</span></dt>
+                <dd>
+                    <span>{{ demande.autreRessource }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.distanceVeh">Distance Veh</span></dt>
+                <dd>
+                    <div *ngIf="demande.distanceVehId">
+                        <a [routerLink]="['/distance-veh', demande.distanceVehId, 'view']">{{ demande.distanceVehId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.organisme">Organisme</span></dt>
+                <dd>
+                    <div *ngIf="demande.organismeId">
+                        <a [routerLink]="['/organisme', demande.organismeId, 'view']">{{ demande.organismeId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.distanceVelo">Distance Velo</span></dt>
+                <dd>
+                    <div *ngIf="demande.distanceVeloId">
+                        <a [routerLink]="['/distance-velo', demande.distanceVeloId, 'view']">{{ demande.distanceVeloId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.demande.etatFrigo">Etat Frigo</span></dt>
+                <dd>
+                    <div *ngIf="demande.etatFrigoId">
+                        <a [routerLink]="['/etat-frigo', demande.etatFrigoId, 'view']">{{ demande.etatFrigoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande', demande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

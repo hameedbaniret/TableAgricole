@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Demande.
+    -->
+    <changeSet id="20200703013804-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="distance_veh_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_distance_veh_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distance_veh"/>
+
+        <addForeignKeyConstraint baseColumnNames="organisme_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_organisme_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisme"/>
+
+        <addForeignKeyConstraint baseColumnNames="distance_velo_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_distance_velo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distance_velo"/>
+
+        <addForeignKeyConstraint baseColumnNames="etat_frigo_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_etat_frigo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etat_frigo"/>
+
+    </changeSet>
+</databaseChangeLog>

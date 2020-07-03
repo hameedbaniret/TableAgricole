@@ -7,6 +7,15 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "territoire": "Territoire",
+        "typeAliment": "Type Aliment",
+        "aliment": "Aliment",
+        "organisme": "Organisme",
+        "besoin": "Besoin",
+        "distanceVeh": "Distance Veh",
+        "distanceVelo": "Distance Velo",
+        "etatFrigo": "Etat Frigo",
+        "demande": "Demande",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

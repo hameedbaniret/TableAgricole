@@ -1,0 +1,145 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-besoin-heading" jhiTranslate="tableAgricoleApp.besoin.home.createOrEditLabel">Create or edit a Besoin</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.idBesoin" for="field_idBesoin">Id Besoin</label>
+                    <input type="number" class="form-control" name="idBesoin" id="field_idBesoin"
+                           formControlName="idBesoin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.besoinFrequence" for="field_besoinFrequence">Besoin Frequence</label>
+                    <select class="form-control" name="besoinFrequence" formControlName="besoinFrequence" id="field_besoinFrequence">
+                        <option value="PERIODIQUE">{{ 'tableAgricoleApp.BesoinFreq.PERIODIQUE' | translate }}</option>
+                        <option value="CONTINU">{{ 'tableAgricoleApp.BesoinFreq.CONTINU' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.typeBesoin" for="field_typeBesoin">Type Besoin</label>
+                    <select class="form-control" name="typeBesoin" formControlName="typeBesoin" id="field_typeBesoin">
+                        <option value="SURPLUSANNONCE">{{ 'tableAgricoleApp.TypeBesoin.SURPLUSANNONCE' | translate }}</option>
+                        <option value="BESOINALIMENT">{{ 'tableAgricoleApp.TypeBesoin.BESOINALIMENT' | translate }}</option>
+                        <option value="BESOINBENEVOLE">{{ 'tableAgricoleApp.TypeBesoin.BESOINBENEVOLE' | translate }}</option>
+                        <option value="BESOINRH">{{ 'tableAgricoleApp.TypeBesoin.BESOINRH' | translate }}</option>
+                        <option value="SURPLUSAGRI">{{ 'tableAgricoleApp.TypeBesoin.SURPLUSAGRI' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.quantite" for="field_quantite">Quantite</label>
+                    <input type="number" class="form-control" name="quantite" id="field_quantite"
+                           formControlName="quantite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.datePeremption" for="field_datePeremption">Date Peremption</label>
+                    <div class="d-flex">
+                        <input id="field_datePeremption" type="datetime-local" class="form-control" name="datePeremption" formControlName="datePeremption" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.dateBesoin" for="field_dateBesoin">Date Besoin</label>
+                    <div class="d-flex">
+                        <input id="field_dateBesoin" type="datetime-local" class="form-control" name="dateBesoin" formControlName="dateBesoin" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.titreEmploi" for="field_titreEmploi">Titre Emploi</label>
+                    <input type="text" class="form-control" name="titreEmploi" id="field_titreEmploi"
+                           formControlName="titreEmploi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.tachePrincipale" for="field_tachePrincipale">Tache Principale</label>
+                    <input type="text" class="form-control" name="tachePrincipale" id="field_tachePrincipale"
+                           formControlName="tachePrincipale"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.nbHeure" for="field_nbHeure">Nb Heure</label>
+                    <input type="number" class="form-control" name="nbHeure" id="field_nbHeure"
+                           formControlName="nbHeure"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.dureeContrat" for="field_dureeContrat">Duree Contrat</label>
+                    <input type="number" class="form-control" name="dureeContrat" id="field_dureeContrat"
+                           formControlName="dureeContrat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.dateEntree" for="field_dateEntree">Date Entree</label>
+                    <div class="d-flex">
+                        <input id="field_dateEntree" type="datetime-local" class="form-control" name="dateEntree" formControlName="dateEntree" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.nbBeneficiaire" for="field_nbBeneficiaire">Nb Beneficiaire</label>
+                    <input type="number" class="form-control" name="nbBeneficiaire" id="field_nbBeneficiaire"
+                           formControlName="nbBeneficiaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.serviceSouhaite" for="field_serviceSouhaite">Service Souhaite</label>
+                    <input type="text" class="form-control" name="serviceSouhaite" id="field_serviceSouhaite"
+                           formControlName="serviceSouhaite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.dateRecuperation" for="field_dateRecuperation">Date Recuperation</label>
+                    <div class="d-flex">
+                        <input id="field_dateRecuperation" type="datetime-local" class="form-control" name="dateRecuperation" formControlName="dateRecuperation" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.typeAliment" for="field_typeAliment">Type Aliment</label>
+                    <select class="form-control" id="field_typeAliment" name="typeAliment" formControlName="typeAlimentId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="typeAlimentOption.id" *ngFor="let typeAlimentOption of typealiments; trackBy: trackById">{{ typeAlimentOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.aliment" for="field_aliment">Aliment</label>
+                    <select class="form-control" id="field_aliment" name="aliment" formControlName="alimentId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="alimentOption.id" *ngFor="let alimentOption of aliments; trackBy: trackById">{{ alimentOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tableAgricoleApp.besoin.demande" for="field_demande">Demande</label>
+                    <select class="form-control" id="field_demande" name="demande" formControlName="demandeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="demandeOption.id" *ngFor="let demandeOption of demandes; trackBy: trackById">{{ demandeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

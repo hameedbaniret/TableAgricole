@@ -1,0 +1,115 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="tableAgricoleApp.besoin.home.title">Besoins</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-besoin" [routerLink]="['/besoin/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="tableAgricoleApp.besoin.home.createLabel">
+            Create a new Besoin
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="besoins?.length === 0">
+        <span jhiTranslate="tableAgricoleApp.besoin.home.notFound">No besoins found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="besoins && besoins.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idBesoin"><span jhiTranslate="tableAgricoleApp.besoin.idBesoin">Id Besoin</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="besoinFrequence"><span jhiTranslate="tableAgricoleApp.besoin.besoinFrequence">Besoin Frequence</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeBesoin"><span jhiTranslate="tableAgricoleApp.besoin.typeBesoin">Type Besoin</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="quantite"><span jhiTranslate="tableAgricoleApp.besoin.quantite">Quantite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datePeremption"><span jhiTranslate="tableAgricoleApp.besoin.datePeremption">Date Peremption</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateBesoin"><span jhiTranslate="tableAgricoleApp.besoin.dateBesoin">Date Besoin</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEmploi"><span jhiTranslate="tableAgricoleApp.besoin.titreEmploi">Titre Emploi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tachePrincipale"><span jhiTranslate="tableAgricoleApp.besoin.tachePrincipale">Tache Principale</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nbHeure"><span jhiTranslate="tableAgricoleApp.besoin.nbHeure">Nb Heure</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dureeContrat"><span jhiTranslate="tableAgricoleApp.besoin.dureeContrat">Duree Contrat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateEntree"><span jhiTranslate="tableAgricoleApp.besoin.dateEntree">Date Entree</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nbBeneficiaire"><span jhiTranslate="tableAgricoleApp.besoin.nbBeneficiaire">Nb Beneficiaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="serviceSouhaite"><span jhiTranslate="tableAgricoleApp.besoin.serviceSouhaite">Service Souhaite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateRecuperation"><span jhiTranslate="tableAgricoleApp.besoin.dateRecuperation">Date Recuperation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeAlimentId"><span jhiTranslate="tableAgricoleApp.besoin.typeAliment">Type Aliment</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="alimentId"><span jhiTranslate="tableAgricoleApp.besoin.aliment">Aliment</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="demandeId"><span jhiTranslate="tableAgricoleApp.besoin.demande">Demande</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let besoin of besoins ;trackBy: trackId">
+                    <td><a [routerLink]="['/besoin', besoin.id, 'view']">{{ besoin.id }}</a></td>
+                    <td>{{ besoin.idBesoin }}</td>
+                    <td jhiTranslate="{{ 'tableAgricoleApp.BesoinFreq.' + besoin.besoinFrequence }}">{{ besoin.besoinFrequence }}</td>
+                    <td jhiTranslate="{{ 'tableAgricoleApp.TypeBesoin.' + besoin.typeBesoin }}">{{ besoin.typeBesoin }}</td>
+                    <td>{{ besoin.quantite }}</td>
+                    <td>{{ besoin.datePeremption | date:'medium' }}</td>
+                    <td>{{ besoin.dateBesoin | date:'medium' }}</td>
+                    <td>{{ besoin.titreEmploi }}</td>
+                    <td>{{ besoin.tachePrincipale }}</td>
+                    <td>{{ besoin.nbHeure }}</td>
+                    <td>{{ besoin.dureeContrat }}</td>
+                    <td>{{ besoin.dateEntree | date:'medium' }}</td>
+                    <td>{{ besoin.nbBeneficiaire }}</td>
+                    <td>{{ besoin.serviceSouhaite }}</td>
+                    <td>{{ besoin.dateRecuperation | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="besoin.typeAlimentId">
+                            <a [routerLink]="['/type-aliment', besoin.typeAlimentId , 'view']" >{{ besoin.typeAlimentId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="besoin.alimentId">
+                            <a [routerLink]="['/aliment', besoin.alimentId , 'view']" >{{ besoin.alimentId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="besoin.demandeId">
+                            <a [routerLink]="['/demande', besoin.demandeId , 'view']" >{{ besoin.demandeId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/besoin', besoin.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/besoin', besoin.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(besoin)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="besoins && besoins.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

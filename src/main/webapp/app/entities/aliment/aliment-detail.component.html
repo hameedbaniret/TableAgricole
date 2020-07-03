@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aliment">
+            <h2><span jhiTranslate="tableAgricoleApp.aliment.detail.title">Aliment</span> {{ aliment.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tableAgricoleApp.aliment.idAliment">Id Aliment</span></dt>
+                <dd>
+                    <span>{{ aliment.idAliment }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.aliment.dscAliment">Dsc Aliment</span></dt>
+                <dd>
+                    <span>{{ aliment.dscAliment }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.aliment.typeAliment">Type Aliment</span></dt>
+                <dd>
+                    <div *ngIf="aliment.typeAlimentId">
+                        <a [routerLink]="['/type-aliment', aliment.typeAlimentId, 'view']">{{ aliment.typeAlimentId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aliment', aliment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

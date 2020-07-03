@@ -1,0 +1,33 @@
+{
+  "name": "DistanceVelo",
+  "fields": [
+    {
+      "fieldName": "idDistanceVelo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dscDistanceVelo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "distanceVelo",
+      "relationshipName": "demande"
+    }
+  ],
+  "changelogDate": "20200703013604",
+  "entityTableName": "distance_velo",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

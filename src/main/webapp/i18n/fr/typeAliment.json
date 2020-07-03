@@ -1,0 +1,25 @@
+{
+  "tableAgricoleApp": {
+    "typeAliment": {
+      "home": {
+        "title": "TypeAliments",
+        "createLabel": "Créer un nouveau Type Aliment",
+        "createOrEditLabel": "Créer ou éditer un Type Aliment",
+        "notFound": "Aucun Type Aliment trouvé"
+      },
+      "created": "Un nouveau Type Aliment a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type Aliment avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type Aliment avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Type Aliment {{ id }} ?"
+      },
+      "detail": {
+        "title": "Type Aliment"
+      },
+      "idTypeAliment": "Id Type Aliment",
+      "dscTypeAliment": "Dsc Type Aliment",
+      "aliment": "Aliment",
+      "besoin": "Besoin"
+    }
+  }
+}

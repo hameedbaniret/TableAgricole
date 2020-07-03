@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="etatFrigo">
+            <h2><span jhiTranslate="tableAgricoleApp.etatFrigo.detail.title">Etat Frigo</span> {{ etatFrigo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tableAgricoleApp.etatFrigo.idEtatFrigo">Id Etat Frigo</span></dt>
+                <dd>
+                    <span>{{ etatFrigo.idEtatFrigo }}</span>
+                </dd>
+                <dt><span jhiTranslate="tableAgricoleApp.etatFrigo.dscEtatFrigo">Dsc Etat Frigo</span></dt>
+                <dd>
+                    <span>{{ etatFrigo.dscEtatFrigo }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/etat-frigo', etatFrigo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
